@@ -8,5 +8,5 @@ It's not my problem if you break your stuff
 
 
 ## sysadmin 
-- [Make a Throaway VM](/Have%20an%20Agent%20spin%20up%20a%20new%20throwaway%20VM%20Prompt.md )
+- [Make a Throwaway VM](/Have%20an%20Agent%20spin%20up%20a%20new%20throwaway%20VM%20Prompt.md )
 - More?
