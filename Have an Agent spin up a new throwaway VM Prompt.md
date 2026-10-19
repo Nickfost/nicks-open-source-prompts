@@ -9,6 +9,10 @@ Use the instructions from https://community-scripts.org/scripts/debian-vm?utm_so
 
 You must follow the interactive prompts during installation or it won't work. You need to follow the advanced config route.
 
+Inspect the current live Community Scripts installer, not cached documentation or older copies. Use the actual installation options presented.
+
+Keep an interactive terminal session attached throughout installation and respond to every prompt promptly, including final confirmations. If the installer appears stalled, check whether it is waiting for input before treating it as a failure.
+
 Select the latest Debian unless I specify otherwise.
 
 Its virtual machine ID should not use PVE's default sequential numbering (###). Instead, it should follow a YYMM## format. For example, if it's October 2026, 261001 would be the first ID used that month. If 261001 is already in use or you have a record of it previously being used, use 261002, and so on. I prefer these because PVE will reassign old numbers, which causes headaches with backups.
@@ -89,6 +93,10 @@ Once the guest agent responds, wait for Cloud-Init:
 ```
 qm guest exec "$VMID" --timeout 600 -- cloud-init status --wait
 ```
+
+A successful command exit code does not guarantee Cloud-Init ran. Inspect the actual output and require "status: done". Do not accept "status: disabled" as success.
+
+If Cloud-Init is disabled unexpectedly, inspect whether the guest can see its Cloud-Init drive. If the drive is attached to IDE but inaccessible, consider moving only the Cloud-Init drive to SCSI, regenerate the image, reboot, and verify again before continuing.
 
 If Cloud-Init is not installed because a NoCloud image was selected, skip this command.
 
@@ -200,7 +208,7 @@ Do not consider provisioning complete until root login, SSH, and networking have
 
 Root password authentication using password is intended only for temporary VMs on my trusted LAN. Do not expose SSH to the public Internet.
 
-Once complete, report the IP address, MAC address, RAM, CPU, VMID, username, and password to me.
+Once complete, report the new VM's IP address, MAC address, RAM, CPU, disk, VMID, username, and password in a single copyable plain-text block, not a table.
 
 Also time how long this took. Tell me at the end how long it took and what took the longest. 
 
