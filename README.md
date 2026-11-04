@@ -9,5 +9,9 @@ It's not my problem if you break your stuff
 
 ## sysadmin 
 - [Make a Throwaway VM](/Have%20an%20Agent%20spin%20up%20a%20new%20throwaway%20VM%20Prompt.md )
+
+## T3
 - [T3 Master Thread](/t3%20master.md )
-- More?
+
+## Admin
+- [Nick's lan setup](https://gist.github.com/Nickfost/37d2e64073b0ae3cdee546193f835470)
