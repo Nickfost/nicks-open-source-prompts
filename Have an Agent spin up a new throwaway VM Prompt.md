@@ -94,7 +94,7 @@ Once the guest agent responds, wait for Cloud-Init:
 qm guest exec "$VMID" --timeout 600 -- cloud-init status --wait
 ```
 
-A successful command exit code does not guarantee Cloud-Init ran. Inspect the actual output and require "status: done". Do not accept "status: disabled" as success.
+Require Cloud-Init status: done. If it exits nonzero, inspect status --long; accept deprecation-only warnings with no initialization errors, but investigate all other failures. Never accept status: disabled as success.
 
 If Cloud-Init is disabled unexpectedly, inspect whether the guest can see its Cloud-Init drive. If the drive is attached to IDE but inaccessible, consider moving only the Cloud-Init drive to SCSI, regenerate the image, reboot, and verify again before continuing.
 
