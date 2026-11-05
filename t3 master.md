@@ -4,4 +4,4 @@ Explain the current state of each idle thread and Give me a Numbered list of 4 l
 
 Use links to threads so i can view them easily.
 
-Note, each thread can request a temp vm if then need one. 
+Note, each thread can request a disposable vm if then need one. i will need to clean it up once the thread is settled. 
