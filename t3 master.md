@@ -4,4 +4,6 @@ Explain the current state of each idle thread and Give me a Numbered list of 4 l
 
 Use links to threads so i can view them easily.
 
-Note, each thread can request a disposable vm if then need one. i will need to clean it up once the thread is settled. 
+You are not to link any PRs or Issues to this thread. if you have, unlink them.
+
+Note, each thread may request a disposable vm if they need one. You may reuse inactive disposable vms. shutdown the disposable vm if you want it deleted. 
